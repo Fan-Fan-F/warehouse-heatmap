@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>warehouse-heatmap · 仓库库位热力图</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <h1>📦 仓库库位热力图 <span class="sub">ABC 分类布局 · 拣货路径对比</span></h1>
+</header>
+
+<main class="layout">
+  <div class="controls">
+    <div class="ctl-group">
+      <label>拣货清单</label>
+      <button id="btn-new-order" class="btn primary">🎲 生成订单（8 件）</button>
+    </div>
+    <div class="ctl-group">
+      <label>路径策略</label>
+      <div class="seg">
+        <button class="seg-btn active" data-mode="compare">策略对比</button>
+        <button class="seg-btn" data-mode="nearest">贪心最近邻</button>
+        <button class="seg-btn" data-mode="sshape">S 形穿越</button>
+      </div>
+    </div>
+    <div class="ctl-group stat-box" id="stat-box">
+      <div class="stat empty">先生成一张订单开始拣货</div>
+    </div>
+  </div>
+
+  <div class="canvas-wrap">
+    <canvas id="cv" width="1120" height="700"></canvas>
+  </div>
+
+  <div class="legend">
+    <span><i class="sw heat-a"></i> A 类爆品（日拣 15+）</span>
+    <span><i class="sw heat-b"></i> B 类常规（日拣 4-14）</span>
+    <span><i class="sw heat-c"></i> C 类长尾（日拣 0-3）</span>
+    <span><i class="sw empty-sw"></i> 空仓位</span>
+    <span><i class="sw pick"></i> 本单待拣</span>
+    <span class="path-l"><i class="line nearest"></i> 最近邻路径</span>
+    <span class="path-l"><i class="line sshape"></i> S 形路径</span>
+  </div>
+</main>
+
+<script src="warehouse.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
