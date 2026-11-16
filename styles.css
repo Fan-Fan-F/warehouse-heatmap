@@ -1,0 +1,102 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f2f4f8;
+  color: #20293a;
+}
+
+.top {
+  background: linear-gradient(120deg, #1c2b21, #2d4a35);
+  color: #fff;
+  padding: 22px 32px;
+}
+.top h1 { font-size: 22px; }
+.top .sub { font-size: 13px; font-weight: normal; opacity: .7; margin-left: 10px; }
+
+.layout { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 10px rgba(20, 40, 30, .06);
+}
+
+.ctl-group { display: flex; align-items: center; gap: 10px; }
+.ctl-group label { font-size: 13px; color: #5a6a60; font-weight: 600; }
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn.primary { background: #2f7a4d; color: #fff; }
+.btn.primary:hover { background: #27663f; }
+
+.seg { display: flex; border: 1px solid #cfd8d2; border-radius: 8px; overflow: hidden; }
+.seg-btn {
+  border: none;
+  background: #fff;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #41544a;
+}
+.seg-btn + .seg-btn { border-left: 1px solid #cfd8d2; }
+.seg-btn.active { background: #2f7a4d; color: #fff; }
+
+.stat-box { margin-left: auto; gap: 14px; }
+.stat { font-size: 14px; }
+.stat b { font-size: 20px; color: #2f7a4d; margin: 0 2px; }
+.stat .save { color: #e64545; font-weight: 700; }
+.stat.empty { color: #8894a8; }
+
+.canvas-wrap {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(20, 40, 30, .06);
+  overflow-x: auto;
+}
+canvas { display: block; margin: 0 auto; }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: #41544a;
+  align-items: center;
+}
+.sw {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  margin-right: 5px;
+  vertical-align: -2px;
+}
+.sw.heat-a { background: #e64545; }
+.sw.heat-b { background: #f2a33c; }
+.sw.heat-c { background: #9db8d2; }
+.sw.empty-sw { background: #eceff3; border: 1px solid #d5dce4; }
+.sw.pick { background: #2f7a4d; }
+.line {
+  display: inline-block;
+  width: 24px;
+  height: 0;
+  border-top: 3px solid;
+  margin-right: 5px;
+  vertical-align: 3px;
+}
+.line.nearest { border-color: #3a6df0; }
+.line.sshape { border-color: #d6336c; border-top-style: dashed; }
